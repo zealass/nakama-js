@@ -211,6 +211,33 @@ To release onto NPM if you have access to the "@heroiclabs" organization you can
 yarn workspace <workspace> run build && yarn workspace <workspace> npm publish --access=public
 ```
 
+### Generate Docs
+
+API docs are generated with typedoc and deployed to GitHub pages.
+
+When changing the API comments, rerun typedoc and commit the changes in `docs/*`.
+
+To run typedoc:
+
+```
+# in project root
+npm i
+
+cd packages/nakama-js
+
+# in packages/nakama-js
+npm i
+npx typedoc index.ts --out ../../docs
+```
+
+Alternatively, to re-generate after packages have been installled run:
+
+```
+# in project root
+chmod +x docs.sh
+./docs.sh
+```
+
 ### License
 
 This project is licensed under the [Apache-2 License](https://github.com/heroiclabs/nakama-js/blob/master/LICENSE).
